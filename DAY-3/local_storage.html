@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function saveData() {
+        localStorage.setItem("name", "Heli");
+        localStorage.setItem("age", "22");
+        document.getElementById("myans").innerHTML = "Data Saved";
+      }
+
+      function getData() {
+        if (localStorage.getItem("name") == null) {
+          let b = localStorage.getItem("age");
+          document.getElementById("myans").innerHTML = "Data is : " + b;
+        } else {
+          let a = localStorage.getItem("name");
+
+          document.getElementById("myans").innerHTML = "Data is : " + a;
+        }
+      }
+
+      function getKeyData() {
+        let keyName = localStorage.key(0);
+        let value = localStorage.getItem(keyName);
+
+        document.getElementById("myans").innerHTML =
+          " Key is : " + keyName + " value is : " + value;
+      }
+
+      function removeData() {
+        localStorage.removeItem("name");
+
+        document.getElementById("myans").innerHTML = "Data Removed";
+      }
+
+      function removeAllData() {
+        localStorage.clear();
+        document.getElementById("myans").innerHTML = " All Data Removed";
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="Save" onclick="saveData()" />
+    <input type="button" value="Get" onclick="getData()" />
+    <input type="button" value="Remove" onclick="removeData()" />
+    <input type="button" value="GetKeyData" onclick="getKeyData()" />
+    <input type="button" value="AllRemove" onclick="removeAllData()" />
+    <p id="myans"></p>
+  </body>
+</html>

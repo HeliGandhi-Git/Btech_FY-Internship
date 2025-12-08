@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCREMENT & DECREMENT</title>
+    <script>
+        let i = 0
+function increment(){
+    i++;
+    document.getElementById("ans").innerHTML= "Value is : " +i
+
+}
+function decrement(){
+    if(i == 0){
+
+    } else{
+    i--;
+    document.getElementById("ans").innerHTML= "Value is : " +i
+    }
+
+} 
+
+
+    </script>
+</head>
+<body>
+    
+    <input type="button" value="Increment" onclick="increment()">
+    <input type="button" value="Decrement" onclick="decrement()"> 
+    <p id="ans"></p>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+
+        function myData(){
+            let a = document.getElementById("txt1").value 
+            let b = document.getElementById("txt2").value 
+        
+            
+
+            if (a==''){
+                alert("enter no1:")
+            } else if (isNaN(a)){
+                alert("enter no. only in txt1")
+
+            }else if (b==''){
+                alert("enter no2:")
+            } else if (isNaN(b)){
+                alert("enter no. only in txt2")
+
+            } else {
+                let c = parseInt(a) + parseInt(b)
+                document.getElementById("ans").innerHTML = "<b> sum is "+ c + "<b>"
+            }
+            
+ }
+
+
+  function myData1(){
+            let a = document.getElementById("txt1").value 
+            let b = document.getElementById("txt2").value 
+            
+
+            if (a==''){
+                alert("enter no1:")
+            } else if (isNaN(a)){
+                alert("enter no. only in txt1")
+
+            }else if (b==''){
+                alert("enter no2:")
+            } else if (isNaN(b)){
+                alert("enter no. only in txt2")
+
+            } else {
+                let c = parseInt(a) - parseInt(b)
+                document.getElementById("ans").innerHTML = "<b> sub is "+ c + "<b>"
+            }
+            
+ }
+
+  function myData2(){
+            let a = document.getElementById("txt1").value 
+            let b = document.getElementById("txt2").value 
+            
+
+            if (a==''){
+                alert("enter no1:")
+            } else if (isNaN(a)){
+                alert("enter no. only in txt1")
+
+            }else if (b==''){
+                alert("enter no2:")
+            } else if (isNaN(b)){
+                alert("enter no. only in txt2")
+
+            } else {
+                let c = parseInt(a) * parseInt(b)
+                document.getElementById("ans").innerHTML = "<b> multi is " + c + "<b>"
+            }
+            
+ }
+         function myData3(){
+            let a = document.getElementById("txt1").value 
+            let b = document.getElementById("txt2").value
+
+            if (a==''){
+                alert("enter no1:")
+            } else if (isNaN(a)){
+                alert("enter no. only in txt1")
+
+            }else if (b==''){
+                alert("enter no2:")
+            } else if (isNaN(b)){
+                alert("enter no. only in txt2")
+
+            } else {
+                let c = parseInt(a) / parseInt(b)
+                document.getElementById("ans").innerHTML = "<b> division is "+ c + "<b>"
+            }
+            
+        }
+    
+        function myData4(){
+            let a = document.getElementById("txt1").value 
+            let b = document.getElementById("txt2").value
+            let d = document.getElementById("operation").value
+            
+            if (a==''){
+                alert("enter no1:")
+            } else if (isNaN(a)){
+                alert("enter no. only in txt1")
+
+            }else if (b==''){
+                alert("enter no2:")
+            } else if (isNaN(b)){
+                alert("enter no. only in txt2")
+
+            } else {
+                
+            }
+            if (d=='+'){
+                let add = parseInt(a) + parseInt(b)
+                document.getElementById("ans").innerHTML = "<b> ADDITION IS : "+add+"</b>"
+            }
+            else if (d=='-'){
+                let sub = parseInt(a) - parseInt(b)
+                document.getElementById("ans").innerHTML = "<b> SUBTRACTION IS : "+sub+"</b>"
+            } else if (d=='*'){
+                let multi = parseInt(a) * parseInt(b)
+                document.getElementById("ans").innerHTML = "<b> MULTIPLICATION IS : "+multi+"</b>"
+            } else if (d=='/'){
+                let div = parseInt(a) / parseInt(b)
+                document.getElementById("ans").innerHTML = "<b> DIVISION IS : "+div+"</b>"
+            }
+        }
+    
+    </script>
+</head>
+<body>
+    no.1: <input type="text" placeholder="enter a no.1" id="txt1"><br>
+    no.2: <input type="text" placeholder="enter a no.2" id="txt2"><br><br><br>
+    <!-- <input value="add" onclick="myData()" type="button">
+    <input value="sub" onclick="myData1()" type="button">
+    <input value="multi" onclick="myData2()" type="button">
+    <input value="divide" onclick="myData3()" type="button">
+     <p id="ans"></p> -->
+    <br><br>
+    <select id="operation" onchange="myData4()">
+        <option value="">select an operation</option>
+        <option value="+" >addition</option>
+        <option value="-" >sutraction</option>
+        <option value="*" >multiplication</option>
+        <option value="/" >division</option>
+        
+    </select>
+    <p id="ans"></p>
+</body>
+</html>

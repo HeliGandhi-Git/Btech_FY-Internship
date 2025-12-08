@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function gst(){
+            let amount = document.getElementById("txt1").value
+            let gstrate = document.getElementById("txt2").value
+            let result1 = parseInt(amount)+(parseInt(amount) * parseInt(gstrate)/100)
+            document.getElementById("ans").innerHTML = "<b> GST INCLUDED AMOUNT :"+ result1 +"</b>"
+        }
+ 
+        function gst1(){
+            let amount = document.getElementById("txt1").value
+            let gstrate = document.getElementById("txt2").value
+            let result1 = parseInt(amount)+(parseInt(amount) * parseInt(gstrate)/100)
+            let result2 = parseInt(amount) - (parseInt(amount) - (parseInt(amount)*(100/(100+parseInt(gstrate)))))
+            document.getElementById("ans").innerHTML= "<b> GST EXCLUDED AMOUNT : " + result2 +"</b>"
+        }
+    </script>
+</head>
+<body>
+    amount: <input type="number" placeholder="enter a amount." id="txt1"><br>
+    gst rate%: <input type="number" placeholder="enter a rate %" id="txt2"><br><br>
+    <input value=" include gst " onclick="gst()" type="button"><br><br>
+    <input value=" exclude gst" onclick="gst1()" type="button"><br>
+
+    <p id="ans"></p>
+</body>
+</html>

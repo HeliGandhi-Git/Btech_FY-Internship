@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN-UP FORM</title>
+    <script>
+        function showdata(){
+                
+                localStorage.setItem("name",document.getElementById("name").value)
+            let a = localStorage.getItem("name")
+            document.getElementById("ans").innerHTML = "name is : " +a
+        
+                localStorage.setItem("email",document.getElementById("email").value)
+            let b = localStorage.getItem("email")
+            document.getElementById("myans").innerHTML = "email is : " +b
+        
+                localStorage.setItem("mobile no.",document.getElementById("mobile no.").value)
+            let c = localStorage.getItem("mobile no.")
+            document.getElementById("yourans").innerHTML = "mobile no. is : " +c
+               
+            localStorage.setItem("password",document.getElementById("password").value)
+            let d = localStorage.getItem("password")
+            // document.getElementById("bans").innerHTML = "password is : " +d
+        
+            window.location = 'login-form.html'
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <h3>SIGN UP FORM</h3>
+   NAME: <input type="text" placeholder="Enter a name" id="name" ><br>
+   EMAIL: <input type="text" placeholder="Enter Email Id" id="email" ><br>
+   MOBILE NO.: <input type="text" placeholder="Enter a Mobile No." id="mobile no." ><br>
+   PASSWORD : <input type="password" placeholder="Enter a password" id="password" ><br><br>
+<input type="button" value="submit" onclick="showdata()">
+<p id="ans"></p>
+<p id="myans"></p>
+<p id="yourans"></p>
+
+</body>
+</html>

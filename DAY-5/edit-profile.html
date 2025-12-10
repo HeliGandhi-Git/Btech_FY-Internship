@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT PROFILE</title>
+    <script>
+
+          function loadData(){
+            document.getElementById("en").value = localStorage.getItem("name");
+            document.getElementById("ee").value = localStorage.getItem("email");
+            document.getElementById("emn").value = localStorage.getItem("mobile no.");
+        }
+
+        function changeData(){
+            
+                let n = document.getElementById("en").value;
+                let e = document.getElementById("ee").value;
+                let p = document.getElementById("emn").value;
+
+                localStorage.setItem("name", n);
+                localStorage.setItem("mobile no.", p);
+                localStorage.setItem("email", e);
+
+                document.getElementById("ep").innerText = "Profile Updated Successfully.!";
+            
+        }
+
+        function homepage(){
+            window.location = 'home-page.html'
+        }
+
+
+
+    </script>
+</head>
+<body onload="loadData()"> 
+    <h3>EDIT PROFILE </h3>
+    Edit Name : <input type="text" placeholder="" id="en"><br>
+    Edit Email : <input type="text" placeholder="" id="ee"><br>
+    Edit Mobile no. : <input type="text" placeholder="" id="emn"><br><br>
+    <input type="button" value="save details" onclick="changeData()">
+    <input type="button" value="Home" onclick="homepage()">
+    <p id="ep"></p> 
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>change pass word login</title>
+    <script>
+        function showdata() {
+            let a = localStorage.getItem("name");
+            let b = localStorage.getItem("email");
+            let c = localStorage.getItem("password");
+
+            let e = document.getElementById("email").value;
+            let p = document.getElementById("password").value;
+
+            if (e == "" && p == "") {
+                alert("enter id and pass");
+            } else {
+                if (e == b && p == c) {
+                    localStorage.setItem("isLoggedIn", "true"); 
+                    window.location='home-page.html'
+                } else {
+                    document.getElementById("ans").innerHTML =
+                        "your info is not correct plz try again...."
+                }
+            }
+        }
+
+        function pass(){
+            window.location = 'new-pass.html'
+        }
+    </script>
+</head>
+
+<body>
+    <h3>login FORM</h3>
+
+    EMAIL: <input type="text" placeholder="Enter Email Id" id="email" /><br />
+    PASSWORD : <input type="password" placeholder="Enter a password" id="password" /><br /><br />
+     <input type="button" value="submit" onclick="showdata()"> <br>
+    <input type="button" value="change-password" onclick="pass()">
+    <p id="ans"></p>
+</body>
+
+</html>

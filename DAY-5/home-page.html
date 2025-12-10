@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = 'login-form.html';
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+<p id="ans"></p>
+    <script>
+        
+        let a = localStorage.getItem("name")
+        document.getElementById("ans").innerHTML = " hello " + a + " welcome to home page. "
+        
+        function homeData(){
+            localStorage.removeItem("isLoggedIn"); 
+            window.location = 'change-pass.html'
+        }
+
+        function editp(){
+            window.location = 'edit-profile.html'
+        }
+    </script>
+    <br>
+    <input type="button" value="log out" onclick="homeData()">
+    <input type="button" value="edit profile" onclick="editp()">
+</html>

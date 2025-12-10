@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new password</title>
+    <script>
+        function changepass(){
+        
+
+            if(localStorage.getItem("password") != document.getElementById("pass").value){
+            if(document.getElementById("pass").value == document.getElementById("pass1").value){
+                 
+                localStorage.removeItem("password")
+                 localStorage.setItem("password", document.getElementById("pass").value)
+
+                 document.getElementById("cnp").innerHTML = " new password set successfully "
+            }
+                
+        }
+
+        }
+    </script>
+</head>
+<body>
+    <h3>NEW PASSWORD FORM</h3>
+    <input type="text" placeholder="enter new paas" id="pass"><br>
+    <input type="password" placeholder="enter confirm paas" id="pass1"><br><br>
+    <input type="button" value="save new password" onclick="changepass()" />
+    <p id="cnp"></p>
+    
+</body>
+</html>

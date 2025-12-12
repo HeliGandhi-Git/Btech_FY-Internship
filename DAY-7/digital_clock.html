@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock .</title>
+    <script>
+        function showclock(){
+
+            let n = new Date() 
+
+            let hours = n.getHours();
+            let minutes = n.getMinutes();
+            let seconds = n.getSeconds();
+
+            let date = n.getDate();
+            let month = n.getMonth() + 1;  
+            let year = n.getFullYear();
+
+             document.getElementById("display-clock").innerHTML =
+                "Time : " + hours + " : " + minutes + " : " + seconds +
+                "<br> Date : " + date + " - " + month + " - " + year;
+        }
+        
+        setInterval(() => {
+            console.log(showclock())
+        }, 1000);
+
+       // setInterval(showclock,1000)
+
+    </script>
+</head>
+<body onload="showclock()">
+    <h3>Task 4  : Display Digital Clock current date & time</h3>
+    <p id="display-clock"></p>
+</body>
+</html>

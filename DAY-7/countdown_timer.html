@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTDOWN TIMER</title>
+    <script>
+        let c = 0;
+        let t = null;
+        function starttimer(){ 
+           
+
+            t = setInterval(() => {
+
+            if (c === 10){
+                stoptimer()
+                return;
+            }
+            c++;
+            document.getElementById("counter").innerHTML = " TIMER : " +c
+            
+        }, 900);
+        
+    }
+    
+    function pausetimer(){
+        clearInterval(t)
+        t = null;
+    }
+    
+    function stoptimer(){
+        clearInterval(t)
+        c = 0;
+         t = null;
+        document.getElementById("counter").innerHTML = " TIMER : " +c
+        
+
+
+        }
+    </script>
+
+</head>
+<body>
+    <H3>Task 2 : Countdown Timer</H3>
+    <input type="button" value="start" onclick="starttimer()">
+    <input type="button" value="pause" onclick="pausetimer()">
+    <input type="button" value="stop" onclick="stoptimer()">
+    <p id="counter">TIMER : 0</p>
+</body>
+</html>

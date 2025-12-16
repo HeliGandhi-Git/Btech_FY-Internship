@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VALIDATION FORM</title>
+    <script>
+      function validateForm() {
+        let n = document.getElementById("name").value;
+        if (n == "") {
+          alert("Enter a Name.");
+        } else if (!isNaN(n)) {
+          alert("Enter Only Alphabets.");
+        } else {
+          document.getElementById("f1").innerHTML = " Name is : " + n;
+        }
+
+        let mn = document.getElementById("mobileNo").value;
+        if (mn == "") {
+          alert("Enter Mobile No.");
+        } else if (isNaN(mn)) {
+          alert("Enter Only Numbers.");
+        } else if (mn.length < 10 || mn.length > 10) {
+          alert("Fixed 10 characters  allowed.");
+        } else {
+          document.getElementById("f2").innerHTML = " Mobile No. is :  " + mn;
+        }
+
+        let g = document.getElementsByName("gender");
+        if (g[0].checked == false && g[1].checked == false) {
+          alert("Select Gender");
+        } else if (g[0].checked == true) {
+          document.getElementById("f3").innerHTML = " Gender is : Male  ";
+        } else if (g[1].checked == true) {
+          document.getElementById("f3").innerHTML = " Gender is : Female ";
+        }
+
+        let h = document.getElementsByName("hobby");
+        if (
+          h[0].checked == false &&
+          h[1].checked == false &&
+          h[2].checked == false
+        ) {
+          alert("Select Gender");
+        } else {
+            if (h[0].checked == true) {
+          document.getElementById("f4").innerHTML = " Hobby is : Reading  ";
+        }  if (h[1].checked == true) {
+          document.getElementById("f4").innerHTML = " Hobby is : Dancing  ";
+        }  if (h[2].checked == true) {
+          document.getElementById("f4").innerHTML = " Hobby is : Singing  ";
+        }  if ((h[0].checked == true) && (h[1].checked == true)) {
+          document.getElementById("f4").innerHTML =
+            " Hobby is : Reading & Dancing ";
+        }  if ((h[0].checked == true) && (h[2].checked == true)) {
+          document.getElementById("f4").innerHTML =
+            " Hobby is : Reading & Singing ";
+        } if ((h[1].checked == true) && (h[2].checked == true)) {
+          document.getElementById("f4").innerHTML =
+            " Hobby is : Dancing & Singing ";
+        } if ((h[0].checked == true) && (h[1].checked == true) && (h[2].checked == true)) {
+          document.getElementById("f4").innerHTML =
+            " Hobby is : Reading , Dancing & Singing ";
+        }
+
+        let c = document.getElementById("ct").value;
+        if (c == "nathi") {
+          alert("select city");
+        } else {
+          document.getElementById("f5").innerHTML = " City is : " + c;
+        }
+      }
+
+
+      let em = document.getElementById("e").value;
+        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!em.match(mailformat)) {
+        alert("Please enter a valid e-mail address");
+        return false;
+     } else{
+        document.getElementById("f6").innerHTML = " Email is : " +em
+     }
+
+     let pwd = document.getElementById("p").value;
+        let passformat = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,8}$/;
+        if (!pwd.match(passformat)) {
+        alert("Enter password with 5 to 8 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character");
+        return false;
+        } else{
+            document.getElementById("f7").innerHTML = " Password is : " +pwd
+        }
+
+      let pw =  document.getElementById("p").value;
+        let cpwd = document.getElementById("cp").value;
+        if (pw!=cpwd) {
+        alert("Password and Confirm Password need to be the same");
+        return false;
+        } else{
+            document.getElementById("f8").innerHTML = " Confirm Password is : " +cpwd
+        }
+  
+        
+
+}
+    </script>
+  </head>
+  <body>
+    <h3>
+      Task 13 : Create Below form on button click do validate data and display
+      data in html body
+    </h3>
+
+    Enter Name: <input type="text" id="name" /><br /><br />
+    Enter Mobile No.: <input type="text" id="mobileNo" /><br />
+    Gender: <input type="radio" name="gender" value="male" />Male
+    <input type="radio" name="gender" value="female" />Female <br />
+
+    Hobby: <input type="checkbox" name="hobby" value="reading" />Reading
+    <input type="checkbox" name="hobby" value="dancing" />Dancing
+    <input type="checkbox" name="hobby" value="singing" />Singing <br />
+
+    City:<select name="city" id="ct">
+      <option value="nathi" selected>---Select City---</option>
+      <option value="Ahmedabad">Ahmedabad</option>
+      <option value="Surat">Surat</option>
+      <option value="Rajkot">Rajkot</option>
+    </select>
+    <br />
+
+    Email: <input type="email" name="email" id="e"> <br>
+
+    Enter Password: <input type="text" name="password" id="p"><br />
+    Confirm Password: <input type="password" name="confirm-password" id="cp"><br /><br>
+
+    <input type="button" value="Submit Data" onclick="validateForm()" />
+
+    <p id="f1"></p>
+    <p id="f2"></p>
+    <p id="f3"></p>
+    <p id="f4"></p>
+    <p id="f5"></p>
+    <p id="f6"></p>
+    <p id="f7"></p>
+    <p id="f8"></p>
+    
+  </body>
+</html>

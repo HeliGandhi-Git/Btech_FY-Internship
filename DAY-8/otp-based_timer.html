@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP BASED TIMER</title>
+    <script>
+        let sec = 30;
+        let t;
+        
+        function startTimer() {
+            
+                let otp = Math.floor(1000 + Math.random() * 9000);  
+                document.getElementById("display").innerHTML = "OTP : " + otp;
+            
+            
+            sec = 30;
+            document.getElementById("resend").style.display = "none";
+
+    
+            t = setInterval(() => {
+                
+        
+               document.getElementById("time").innerHTML = "00 :  " + sec;
+                   
+
+                sec--;
+
+                if (sec < 0) {
+                    clearInterval(t);
+                    document.getElementById("time").innerHTML = "00 : 00";
+                    document.getElementById("resend").style.display = ""
+                }
+
+            }, 200);
+        }
+       
+    
+    </script>
+</head>
+<body >
+    <h3>Task 7 : Otp Based Timer</h3>
+    <input type="button" value="start timer" onclick="startTimer()"><br><br>
+    <input type="button" value="Resend otp" onclick="startTimer()" id="resend" style="display:none;"><br><br>
+    <p id="time">00:30</p>
+    <p id="display"></p>
+</body>
+</html>

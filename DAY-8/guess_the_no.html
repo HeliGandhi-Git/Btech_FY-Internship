@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUESS THE NUMBER</title>
+    <script>
+
+        let randomNum;
+
+        function generateNo(){
+            randomNum = Math.floor(Math.random()*10) + 1;
+             console.log(randomNum);
+
+        }
+        function checkNo(){
+            let userNum = document.getElementById("guess").value
+
+            if(userNum==randomNum){
+                document.getElementById("result").innerHTML =
+                 "Success value : Number Matched successfully!"
+            }   else {
+                document.getElementById("result").innerHTML =
+                 "Failure value : Number Not Matched! plz try again."
+            }
+
+        }
+    </script>
+</head>
+<body onload="generateNo()">
+    <h3>Task 8 : Guess The Number</h3>
+    <input type="number" id="guess" placeholder="enter a no."><br><br>
+    <input type="button" value="check" onclick="checkNo()"><br>
+    <p id="result"></p>
+</body>
+</html>

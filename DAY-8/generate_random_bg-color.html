@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANGE BG COLOR</title>
+    <script>
+        function changeBgColor(){
+
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+
+            document.body.style.backgroundColor = 
+                "rgb(" + r + "," + g + "," + b + ")";
+        }
+
+    </script>
+</head>
+<body onload="changeBgColor()">
+    <h3>Task 5 : On Page Refresh Generate Random Background Color.</h3>
+</body>
+</html>

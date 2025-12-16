@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE CALCULATOR</title>
+    <script>
+
+        function insert(value) {
+
+            if (value == '+' || value == '-' || value == '*' || value == '/') {
+                
+                document.getElementById("screen1").value =
+                    document.getElementById("screen").value + value;
+
+            
+                document.getElementById("screen").value = "";
+            }
+            else {
+                document.getElementById("screen").value += value;
+            }
+        }
+
+        function calculate() {
+            let exp =
+                document.getElementById("screen1").value +
+                document.getElementById("screen").value;
+
+            document.getElementById("screen").value = eval(exp);
+            document.getElementById("screen1").value = "";
+        }
+
+        function clearScreen() {
+            document.getElementById("screen").value = "";
+            document.getElementById("screen1").value = "";
+        }
+
+    </script>
+</head>
+<body>
+
+    <h3>Task 10 : Create Calculator</h3>
+
+    <input type="text" id="screen1" style="border:none;" readonly><br>
+    <input type="text" id="screen" readonly><br><br>
+
+    <div style="margin-left:20px;">
+        <input type="button" value="1" onclick="insert('1')">
+        <input type="button" value="2" onclick="insert('2')">
+        <input type="button" value="3" onclick="insert('3')">
+        <input type="button" value="+" onclick="insert('+')"><br><br>
+
+        <input type="button" value="4" onclick="insert('4')">
+        <input type="button" value="5" onclick="insert('5')">
+        <input type="button" value="6" onclick="insert('6')">
+        <input type="button" value="-" onclick="insert('-')"><br><br>
+
+        <input type="button" value="7" onclick="insert('7')">
+        <input type="button" value="8" onclick="insert('8')">
+        <input type="button" value="9" onclick="insert('9')">
+        <input type="button" value="*" onclick="insert('*')"><br><br>
+
+        <input type="button" value="." onclick="insert('.')">
+        <input type="button" value="0" onclick="insert('0')">
+        <input type="button" value="=" onclick="calculate()">
+        <input type="button" value="/" onclick="insert('/')">
+    </div>
+
+    <br>
+    <div style="margin-left:45px;">
+        <input type="button" value="C" onclick="clearScreen()">
+    </div>
+
+</body>
+</html>

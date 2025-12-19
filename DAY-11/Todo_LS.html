@@ -7,6 +7,7 @@
 
     <script>
         let array = [];
+        
 
         function AddTodo() {
             let text = document.getElementById("txt").value;
@@ -17,10 +18,12 @@
                 array = JSON.parse(data);
             }
 
+
             array.push(text);   
 
             
             localStorage.setItem("list", JSON.stringify(array));
+
 
             document.getElementById("txt").value = "";
 
@@ -35,12 +38,41 @@
 
                 let output = "";
                 for (let i = 0; i < array.length; i++) {
-                    output += array[i] + "<br>";
-                }
+            output +=  `${array[i]} 
+                <button onclick="EditTodo(${i})">Edit</button>
+                <button onclick="DeleteTodo(${i})">Delete</button>
+                <br>`
+            
+        }
 
-                document.getElementById("output").innerHTML = output;
+                document.getElementById("output").innerHTML = output; 
             }
         }
+
+       
+       function EditTodo(index){
+            let editText = array[index]
+            document.getElementById("txt").value = editText;
+
+            array.splice(index, 1)
+            
+            localStorage.setItem("list", JSON.stringify(array));
+            GetTodo();
+
+        }
+
+
+
+         function DeleteTodo(index){
+
+            array.splice(index, 1)
+            
+            localStorage.setItem("list", JSON.stringify(array));
+            GetTodo();
+
+        }
+
+
     </script>
 </head>
 

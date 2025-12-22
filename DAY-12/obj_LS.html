@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJ IN LS</title>
+    <script>
+        function saveObj(){
+            let myobj = {
+                name : "Heli",
+                gender : "Female",
+                mobile : 9377530775
+            }
+            let myData = JSON.stringify(myobj)
+            localStorage.setItem("userdata",myData)
+        }
+        function getObj(){
+            let a = localStorage.getItem("userdata")
+            let myData = JSON.parse(a)
+             
+            
+            document.getElementById("myid0").innerHTML = "Data is "  +a
+            document.getElementById("myid").innerHTML = "Name is  "  +myData.name
+            document.getElementById("myid1").innerHTML = "Gender  is "  +myData.gender
+            document.getElementById("myid2").innerHTML = "Mobile no. is "  +myData.mobile
+        }
+    </script>
+</head>
+<body>
+    <h3> OBJECT IN LOCAL STORAGE. </h3>
+    <input type="button"  value="save1" onclick="saveObj()">
+    <input type="button"  value="get1" onclick="getObj()">
+    <p id="myid0"></p>
+    <p id="myid"></p>
+    <p id="myid1"></p>
+    <p id="myid2"></p>
+
+</body>
+</html>
